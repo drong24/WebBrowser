@@ -25,7 +25,7 @@ namespace WebBrowser.UI
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Created by: Daisy Rong\nID: dzr0070\n" +
-               "Date: 03/26/2023\n Simple Web Browser");
+               "Date: 03/26/2023\nSimple Web Browser");
         }
 
         private void toolStripButton4_Click(object sender, EventArgs e)
