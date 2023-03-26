@@ -16,5 +16,16 @@ namespace WebBrowser.UI
         {
             InitializeComponent();
         }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Created by: Daisy Rong\nID: dzr0070" +
+                "\n Simple Web Browser" + DateTime.Now);
+        }
     }
 }
