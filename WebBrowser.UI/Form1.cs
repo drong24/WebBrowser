@@ -27,7 +27,7 @@ namespace WebBrowser.UI
             MessageBox.Show("Created by: Daisy Rong\nID: dzr0070\n" +
                "Date: 03/26/2023\nSimple Web Browser");
         }
-
+        /*
         private void toolStripButton4_Click(object sender, EventArgs e)
         {
             webBrowser1.Navigate(AddressTextBox.Text);
@@ -38,6 +38,6 @@ namespace WebBrowser.UI
             {
                 toolStripButton4_Click(this, new EventArgs());
             }
-        }
+        }*/
     }
 }
