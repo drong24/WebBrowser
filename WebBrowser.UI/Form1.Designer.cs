@@ -31,12 +31,14 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.userTools1 = new WebBrowser.UI.UserTools();
             this.tabPage1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.userTools1);
             this.tabPage1.Controls.Add(this.webBrowser1);
             this.tabPage1.Location = new System.Drawing.Point(8, 39);
             this.tabPage1.Name = "tabPage1";
@@ -48,11 +50,10 @@
             // 
             // webBrowser1
             // 
-            this.webBrowser1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.webBrowser1.Location = new System.Drawing.Point(3, 3);
+            this.webBrowser1.Location = new System.Drawing.Point(0, 85);
             this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser1.Name = "webBrowser1";
-            this.webBrowser1.Size = new System.Drawing.Size(1221, 705);
+            this.webBrowser1.Size = new System.Drawing.Size(1227, 626);
             this.webBrowser1.TabIndex = 0;
             // 
             // tabControl1
@@ -64,6 +65,13 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1243, 758);
             this.tabControl1.TabIndex = 2;
+            // 
+            // userTools1
+            // 
+            this.userTools1.Location = new System.Drawing.Point(0, 0);
+            this.userTools1.Name = "userTools1";
+            this.userTools1.Size = new System.Drawing.Size(1227, 79);
+            this.userTools1.TabIndex = 1;
             // 
             // Form1
             // 
@@ -84,6 +92,7 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.WebBrowser webBrowser1;
         private System.Windows.Forms.TabControl tabControl1;
+        private UserTools userTools1;
     }
 }
 
