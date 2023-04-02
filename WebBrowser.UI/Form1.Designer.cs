@@ -50,10 +50,11 @@
             // 
             // webBrowser1
             // 
-            this.webBrowser1.Location = new System.Drawing.Point(0, 85);
+            this.webBrowser1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.webBrowser1.Location = new System.Drawing.Point(3, 3);
             this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser1.Name = "webBrowser1";
-            this.webBrowser1.Size = new System.Drawing.Size(1227, 626);
+            this.webBrowser1.Size = new System.Drawing.Size(1221, 705);
             this.webBrowser1.TabIndex = 0;
             // 
             // tabControl1
@@ -68,10 +69,13 @@
             // 
             // userTools1
             // 
-            this.userTools1.Location = new System.Drawing.Point(0, 0);
+            this.userTools1.AutoSize = true;
+            this.userTools1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.userTools1.Location = new System.Drawing.Point(3, 3);
             this.userTools1.Name = "userTools1";
-            this.userTools1.Size = new System.Drawing.Size(1227, 79);
+            this.userTools1.Size = new System.Drawing.Size(1221, 98);
             this.userTools1.TabIndex = 1;
+            this.userTools1.Load += new System.EventHandler(this.userTools1_Load);
             // 
             // Form1
             // 
@@ -83,6 +87,7 @@
             this.Name = "Form1";
             this.Text = "WebBroswer";
             this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -90,9 +95,9 @@
 
         #endregion
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.WebBrowser webBrowser1;
-        private System.Windows.Forms.TabControl tabControl1;
-        private UserTools userTools1;
+        public System.Windows.Forms.TabControl tabControl1;
+        public UserTools userTools1;
+        public System.Windows.Forms.WebBrowser webBrowser1;
     }
 }
 
