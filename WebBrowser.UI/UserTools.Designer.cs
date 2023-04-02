@@ -194,6 +194,7 @@
             this.RefreshButton.Name = "RefreshButton";
             this.RefreshButton.Size = new System.Drawing.Size(46, 36);
             this.RefreshButton.Text = "RefreshButton";
+            this.RefreshButton.Click += new System.EventHandler(this.RefreshButton_Click);
             // 
             // HomeButton
             // 

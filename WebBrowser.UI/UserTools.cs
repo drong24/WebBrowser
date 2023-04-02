@@ -22,12 +22,21 @@ namespace WebBrowser.UI
 
         private void newTabToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            TabControl newTab = new TabControl();
+            Form1 form = (Form1)this.ParentForm as Form1;
+            string title = "TabPage " + (form.tabControl1.TabCount + 1).ToString();
+            TabPage myTabPage = new TabPage(title);
+            UserTools tool = new UserTools();
+
+            myTabPage.Controls.Add(tool);
+            myTabPage.Controls[0].Dock = DockStyle.Fill;
+            form.tabControl1.TabPages.Add(myTabPage);
+            
         }
 
         private void closeCurrentTabToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+            Form1 form = (Form1)this.ParentForm as Form1;
+            form.tabControl1.TabPages.Remove(form.tabControl1.SelectedTab);
         }
 
 
@@ -60,8 +69,9 @@ namespace WebBrowser.UI
             string address = AddressTextBox.Text;
             Form1 form = this.ParentForm as Form1;
             form.webBrowser1.Navigate(address);
-            form.history.Add(form.historyLen, address);
             form.historyLen++;
+            form.history.Add(form.historyLen, address);
+
         }
 
         private void backButton_Click(object sender, EventArgs e)
@@ -76,6 +86,12 @@ namespace WebBrowser.UI
             Form1 form = this.ParentForm as Form1;
             form.webBrowser1.Navigate(form.history[form.historyLen + 1]);
             form.historyLen++;
+        }
+
+        private void RefreshButton_Click(object sender, EventArgs e)
+        {
+            Form1 form = this.ParentForm as Form1;
+            form.webBrowser1.Navigate(form.history[form.historyLen]);
         }
     }
 }
