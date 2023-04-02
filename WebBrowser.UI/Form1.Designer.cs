@@ -68,7 +68,7 @@
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1243, 40);
+            this.menuStrip1.Size = new System.Drawing.Size(1243, 48);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -162,9 +162,9 @@
             this.AddressTextBox,
             this.toolStripButton4,
             this.BookmarkButton});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 40);
+            this.toolStrip1.Location = new System.Drawing.Point(0, 48);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1243, 42);
+            this.toolStrip1.Size = new System.Drawing.Size(1243, 50);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -174,7 +174,7 @@
             this.backButton.Image = ((System.Drawing.Image)(resources.GetObject("backButton.Image")));
             this.backButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.backButton.Name = "backButton";
-            this.backButton.Size = new System.Drawing.Size(46, 36);
+            this.backButton.Size = new System.Drawing.Size(46, 44);
             this.backButton.Text = "BackButton";
             // 
             // toolStripButton1
@@ -236,7 +236,7 @@
             this.tabPage1.Location = new System.Drawing.Point(8, 39);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1227, 629);
+            this.tabPage1.Size = new System.Drawing.Size(1227, 613);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -247,17 +247,17 @@
             this.webBrowser1.Location = new System.Drawing.Point(3, 3);
             this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser1.Name = "webBrowser1";
-            this.webBrowser1.Size = new System.Drawing.Size(1221, 623);
+            this.webBrowser1.Size = new System.Drawing.Size(1221, 607);
             this.webBrowser1.TabIndex = 0;
             // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.Location = new System.Drawing.Point(0, 82);
+            this.tabControl1.Location = new System.Drawing.Point(0, 98);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1243, 676);
+            this.tabControl1.Size = new System.Drawing.Size(1243, 660);
             this.tabControl1.TabIndex = 2;
             // 
             // Form1
