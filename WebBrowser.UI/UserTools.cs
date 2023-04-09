@@ -19,7 +19,7 @@ namespace WebBrowser.UI
             InitializeComponent();
             
         }
-
+        /*
         private void newTabToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form1 form = (Form1)this.ParentForm as Form1;
@@ -92,6 +92,6 @@ namespace WebBrowser.UI
         {
             Form1 form = this.ParentForm as Form1;
             form.webBrowser1.Navigate(form.history[form.historyLen]);
-        }
+        }*/
     }
 }

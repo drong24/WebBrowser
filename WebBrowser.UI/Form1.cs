@@ -19,31 +19,36 @@ namespace WebBrowser.UI
             InitializeComponent();
         }
 
-        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
-        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Created by: Daisy Rong\nID: dzr0070\n" +
-               "Date: 03/26/2023\nSimple Web Browser");
-        }
-
         private void userTools1_Load(object sender, EventArgs e)
         {
-            
-        }
 
-        private void backButton_Click(object sender, EventArgs e)
-        {
-            
         }
+        /*
+private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+{
+   Application.Exit();
+}
 
-        private void toolStripButton4_Click(object sender, EventArgs e)
-        {
-            webBrowser1.Navigate(userTools1.AddressTextBox.Text);
-        }
+private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+{
+   MessageBox.Show("Created by: Daisy Rong\nID: dzr0070\n" +
+      "Date: 03/26/2023\nSimple Web Browser");
+}
 
+private void userTools1_Load(object sender, EventArgs e)
+{
+
+}
+
+private void backButton_Click(object sender, EventArgs e)
+{
+
+}
+
+private void toolStripButton4_Click(object sender, EventArgs e)
+{
+   webBrowser1.Navigate(userTools1.AddressTextBox.Text);
+}
+*/
     }
 }
