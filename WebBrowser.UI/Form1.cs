@@ -23,32 +23,35 @@ namespace WebBrowser.UI
         {
 
         }
-        /*
-private void exitToolStripMenuItem_Click(object sender, EventArgs e)
-{
-   Application.Exit();
-}
 
-private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
-{
-   MessageBox.Show("Created by: Daisy Rong\nID: dzr0070\n" +
-      "Date: 03/26/2023\nSimple Web Browser");
-}
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Created by: Daisy Rong\nID: dzr0070\n" +
+                "Date: 03/26/2023\nSimple Web Browser");
+        }
 
-private void userTools1_Load(object sender, EventArgs e)
-{
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
 
-}
+        private void PopulateMenuStrip
+        private void newTabToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string title = "TabPage " + (tabControl1.TabCount + 1).ToString();
+            TabPage tabPage = new TabPage(title);
+            menuStrip1 = new MenuStrip();
+            tabPage.Controls.Add(menuStrip1);
+            tabPage.Controls[0].Dock = DockStyle.Top;
+            UserTools tool = new UserTools();
+            tabPage.Controls.Add(tool);
+            tabPage.Controls[1].Dock = DockStyle.Fill;
+            tabControl1.TabPages.Add(tabPage);
+        }
 
-private void backButton_Click(object sender, EventArgs e)
-{
-
-}
-
-private void toolStripButton4_Click(object sender, EventArgs e)
-{
-   webBrowser1.Navigate(userTools1.AddressTextBox.Text);
-}
-*/
+        private void closeCurrentTabToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            tabControl1.TabPages.Remove(tabControl1.SelectedTab);
+        }
     }
 }
