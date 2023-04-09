@@ -54,7 +54,7 @@
             this.BookmarkButton});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1046, 42);
+            this.toolStrip1.Size = new System.Drawing.Size(1046, 50);
             this.toolStrip1.Stretch = true;
             this.toolStrip1.TabIndex = 3;
             this.toolStrip1.Text = "toolStrip1";
@@ -65,7 +65,7 @@
             this.backButton.Image = ((System.Drawing.Image)(resources.GetObject("backButton.Image")));
             this.backButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.backButton.Name = "backButton";
-            this.backButton.Size = new System.Drawing.Size(46, 36);
+            this.backButton.Size = new System.Drawing.Size(46, 44);
             this.backButton.Text = "BackButton";
             this.backButton.Click += new System.EventHandler(this.backButton_Click);
             // 
@@ -75,7 +75,7 @@
             this.forwardButton.Image = ((System.Drawing.Image)(resources.GetObject("forwardButton.Image")));
             this.forwardButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.forwardButton.Name = "forwardButton";
-            this.forwardButton.Size = new System.Drawing.Size(46, 36);
+            this.forwardButton.Size = new System.Drawing.Size(46, 44);
             this.forwardButton.Text = "ForwardButton";
             this.forwardButton.Click += new System.EventHandler(this.forwardButton_Click);
             // 
@@ -85,7 +85,7 @@
             this.RefreshButton.Image = ((System.Drawing.Image)(resources.GetObject("RefreshButton.Image")));
             this.RefreshButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.RefreshButton.Name = "RefreshButton";
-            this.RefreshButton.Size = new System.Drawing.Size(46, 36);
+            this.RefreshButton.Size = new System.Drawing.Size(46, 44);
             this.RefreshButton.Text = "RefreshButton";
             this.RefreshButton.Click += new System.EventHandler(this.RefreshButton_Click);
             // 
@@ -95,14 +95,14 @@
             this.HomeButton.Image = ((System.Drawing.Image)(resources.GetObject("HomeButton.Image")));
             this.HomeButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.HomeButton.Name = "HomeButton";
-            this.HomeButton.Size = new System.Drawing.Size(46, 36);
+            this.HomeButton.Size = new System.Drawing.Size(46, 44);
             this.HomeButton.Text = "HomeButton";
             // 
             // AddressTextBox
             // 
             this.AddressTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.AddressTextBox.Name = "AddressTextBox";
-            this.AddressTextBox.Size = new System.Drawing.Size(300, 42);
+            this.AddressTextBox.Size = new System.Drawing.Size(300, 50);
             this.AddressTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.AddressTextBox_KeyDown_1);
             // 
             // GoButton
@@ -111,7 +111,7 @@
             this.GoButton.Image = ((System.Drawing.Image)(resources.GetObject("GoButton.Image")));
             this.GoButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.GoButton.Name = "GoButton";
-            this.GoButton.Size = new System.Drawing.Size(46, 36);
+            this.GoButton.Size = new System.Drawing.Size(46, 44);
             this.GoButton.Text = "GoButton";
             this.GoButton.Click += new System.EventHandler(this.GoButton_Click_1);
             // 
@@ -121,16 +121,16 @@
             this.BookmarkButton.Image = ((System.Drawing.Image)(resources.GetObject("BookmarkButton.Image")));
             this.BookmarkButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.BookmarkButton.Name = "BookmarkButton";
-            this.BookmarkButton.Size = new System.Drawing.Size(59, 36);
+            this.BookmarkButton.Size = new System.Drawing.Size(59, 44);
             this.BookmarkButton.Text = "toolStripSplitButton1";
             // 
             // webBrowser1
             // 
             this.webBrowser1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.webBrowser1.Location = new System.Drawing.Point(0, 42);
+            this.webBrowser1.Location = new System.Drawing.Point(0, 50);
             this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser1.Name = "webBrowser1";
-            this.webBrowser1.Size = new System.Drawing.Size(1046, 557);
+            this.webBrowser1.Size = new System.Drawing.Size(1046, 549);
             this.webBrowser1.TabIndex = 4;
             // 
             // UserTools
