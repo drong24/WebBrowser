@@ -34,28 +34,28 @@ namespace WebBrowser.UI
             string address = AddressTextBox.Text;
             webBrowser1.Navigate(address);
 
-            Form1 form = this.ParentForm as Form1;
+            Main form = this.ParentForm as Main;
             form.historyLen++;
             form.history.Add(form.historyLen, address);
         }
 
         private void backButton_Click(object sender, EventArgs e)
         {
-            Form1 form = this.ParentForm as Form1;
+            Main form = this.ParentForm as Main;
             webBrowser1.Navigate(form.history[form.historyLen - 1]);
             form.historyLen--;
         }
 
         private void forwardButton_Click(object sender, EventArgs e)
         {
-            Form1 form = this.ParentForm as Form1;
+            Main form = this.ParentForm as Main;
             webBrowser1.Navigate(form.history[form.historyLen + 1]);
             form.historyLen++;
         }
 
         private void RefreshButton_Click(object sender, EventArgs e)
         {
-            Form1 form = this.ParentForm as Form1;
+            Main form = this.ParentForm as Main;
             webBrowser1.Navigate(form.history[form.historyLen]);
         }
 

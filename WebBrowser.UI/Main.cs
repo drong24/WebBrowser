@@ -10,11 +10,11 @@ using System.Windows.Forms;
 
 namespace WebBrowser.UI
 {
-    public partial class Form1 : Form
+    public partial class Main : Form
     {
         public Dictionary<int, string> history = new Dictionary<int, string>();
         public int historyLen = 0;
-        public Form1()
+        public Main()
         {
             InitializeComponent();
         }
