@@ -35,7 +35,6 @@ namespace WebBrowser.UI
             Application.Exit();
         }
 
-        private void PopulateMenuStrip
         private void newTabToolStripMenuItem_Click(object sender, EventArgs e)
         {
             string title = "TabPage " + (tabControl1.TabCount + 1).ToString();
