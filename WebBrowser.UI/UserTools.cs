@@ -58,5 +58,10 @@ namespace WebBrowser.UI
             Form1 form = this.ParentForm as Form1;
             webBrowser1.Navigate(form.history[form.historyLen]);
         }
+
+        private void BookmarkButton_ButtonClick(object sender, EventArgs e)
+        {
+
+        }
     }
 }

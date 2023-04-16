@@ -8,5 +8,6 @@ namespace WebBrowser.Logic
 {
     class HistoryManager
     {
+       
     }
 }
