@@ -9,11 +9,11 @@ namespace WebBrowser.Logic
     public class BookmarkItem
     {
         string url; string title;
-
+/*
         public BookmarkItem(string urlIn, string titleIn) 
         {
             url = urlIn;
             title = titleIn;
-        }
+        }*/
     }
 }

@@ -6,15 +6,11 @@ using System.Threading.Tasks;
 
 namespace WebBrowser.Logic
 {
-    class HistoryItem
+    public class HistoryItem
     {
-        string url; string title; DateTime date;
+        public string url { get; set; } 
+        public string title { get; set; } 
+        public DateTime date { get; set; }
 
-        public HistoryItem(string urlIn, string titleIn, DateTime dateIn)
-        {
-            url = urlIn;
-            title = titleIn;
-            date = dateIn;
-        }
     }
 }

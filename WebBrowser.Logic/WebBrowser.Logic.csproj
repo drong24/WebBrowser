@@ -74,5 +74,11 @@
       <DependentUpon>WebBrowserDBDataSet.xsd</DependentUpon>
     </None>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WebBrowser.Data\WebBrowser.Data.csproj">
+      <Project>{84bc8473-94e4-45db-8f38-dfb3221101ff}</Project>
+      <Name>WebBrowser.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
