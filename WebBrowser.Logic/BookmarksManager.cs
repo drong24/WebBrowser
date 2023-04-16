@@ -1,0 +1,35 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using WebBrowser.Data.BookmarksDataSetTableAdapters;
+
+namespace WebBrowser.Logic
+{
+    class BookmarksManager
+    {
+        public static void AddItem(BookmarkItem item)
+        {
+            var adapter = new BookmarksTableAdapter();
+            adapter.Insert(item.url, item.title);
+
+        }
+
+        public static List<BookmarkItem> GetItems()
+        {
+            var adapter = new BookmarksTableAdapter();
+            var output = new List<BookmarkItem>();
+            var rows = adapter.GetData();
+
+            foreach (var row in rows)
+            {
+                var item = new BookmarkItem();
+                item.url = row.URL;
+                item.title = row.Title;
+                output.Add(item);
+            }
+            return output;
+        }
+    }
+}

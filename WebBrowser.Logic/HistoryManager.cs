@@ -19,7 +19,19 @@ namespace WebBrowser.Logic
         public static List<HistoryItem> GetItems()
         {
             var adapter = new HistoryTableAdapter();
-            var output = new List<HistoryItem>;
+            var output = new List<HistoryItem>();
+            var rows = adapter.GetData();
+
+            foreach (var row in rows)
+            {
+                var item = new HistoryItem();
+                item.url = row.URL;
+                item.title = row.Title;
+                item.date = row.Date;
+
+                output.Add(item);
+            }
+            return output;
         }
     }
 }
