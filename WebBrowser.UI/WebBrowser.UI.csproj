@@ -95,6 +95,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>WebBrowserDBDataSet.xsd</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="BookmarksManagerForm.resx">
+      <DependentUpon>BookmarksManagerForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="HistoryManagerForm.resx">
       <DependentUpon>HistoryManagerForm.cs</DependentUpon>
     </EmbeddedResource>
