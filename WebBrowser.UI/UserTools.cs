@@ -21,8 +21,6 @@ namespace WebBrowser.UI
             
         }
 
-        int BookmarkCount = 0;
-
         private void AddressTextBox_KeyDown_1(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -35,11 +33,7 @@ namespace WebBrowser.UI
             string address = AddressTextBox.Text;
             webBrowser1.Navigate(address);
 
-            var VisitedItem = new HistoryItem();
-            VisitedItem.url = address;
-            VisitedItem.title = webBrowser1.Document.Title;
-            VisitedItem.date = DateTime.Now;
-            HistoryManager.AddItem(VisitedItem);
+
         }
 
         private void backButton_Click(object sender, EventArgs e)
@@ -74,6 +68,24 @@ namespace WebBrowser.UI
             bookmarkItem.url = AddressTextBox.Text;
             bookmarkItem.title = webBrowser1.Document.Title;
             BookmarksManager.AddItem(bookmarkItem);
+        }
+
+        private void webBrowser1_Navigated(object sender, WebBrowserNavigatedEventArgs e)
+        {
+            var VisitedItem = new HistoryItem();
+            VisitedItem.url = webBrowser1.Url.ToString();
+            try
+            {
+                VisitedItem.title = webBrowser1.Document.Title;
+            }
+            catch (NullReferenceException ex)
+            {
+                Console.WriteLine(ex.ToString());
+                VisitedItem.title = "History";
+
+            }
+            VisitedItem.date = DateTime.Now;
+            HistoryManager.AddItem(VisitedItem);
         }
     }
 }

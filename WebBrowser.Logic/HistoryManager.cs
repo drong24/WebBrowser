@@ -25,20 +25,28 @@ namespace WebBrowser.Logic
 
         public static List<HistoryItem> GetItems()
         {
-            var adapter = new HistoryTableAdapter();
-            var output = new List<HistoryItem>();
-            var rows = adapter.GetData();
+            try {
+                var adapter = new HistoryTableAdapter();
+                var output = new List<HistoryItem>();
+                var rows = adapter.GetData();
 
-            foreach (var row in rows)
-            {
-                var item = new HistoryItem();
-                item.url = row.URL;
-                item.title = row.Title;
-                item.date = row.Date;
+                foreach (var row in rows)
+                {
+                    var item = new HistoryItem();
+                    item.url = row.URL;
+                    item.title = row.Title;
+                    item.date = row.Date;
 
-                output.Add(item);
+                    output.Add(item);
+                }
+                return output;
             }
-            return output;
-        }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return null;
+            }
+            }
+        
     }
 }
