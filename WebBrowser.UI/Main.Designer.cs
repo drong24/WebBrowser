@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.userTools1 = new WebBrowser.UI.UserTools();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newTabToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -43,6 +42,7 @@
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.userTools1 = new WebBrowser.UI.UserTools();
             this.tabPage1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -51,26 +51,14 @@
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.userTools1);
-            this.tabPage1.Controls.Add(this.menuStrip1);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPage1.Size = new System.Drawing.Size(614, 319);
+            this.tabPage1.Size = new System.Drawing.Size(635, 316);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // userTools1
-            // 
-            this.userTools1.AutoSize = true;
-            this.userTools1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.userTools1.Location = new System.Drawing.Point(2, 26);
-            this.userTools1.Margin = new System.Windows.Forms.Padding(1);
-            this.userTools1.Name = "userTools1";
-            this.userTools1.Size = new System.Drawing.Size(610, 291);
-            this.userTools1.TabIndex = 0;
-            this.userTools1.Load += new System.EventHandler(this.userTools1_Load);
             // 
             // menuStrip1
             // 
@@ -79,10 +67,10 @@
             this.fileToolStripMenuItem,
             this.toolsToolStripMenuItem,
             this.helpToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(2, 2);
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(3, 1, 0, 1);
-            this.menuStrip1.Size = new System.Drawing.Size(610, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(643, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -165,7 +153,7 @@
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
@@ -173,20 +161,32 @@
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.Location = new System.Drawing.Point(0, 0);
+            this.tabControl1.Location = new System.Drawing.Point(0, 24);
             this.tabControl1.Margin = new System.Windows.Forms.Padding(2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(622, 345);
+            this.tabControl1.Size = new System.Drawing.Size(643, 342);
             this.tabControl1.TabIndex = 2;
+            // 
+            // userTools1
+            // 
+            this.userTools1.AutoSize = true;
+            this.userTools1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.userTools1.Location = new System.Drawing.Point(2, 2);
+            this.userTools1.Margin = new System.Windows.Forms.Padding(1);
+            this.userTools1.Name = "userTools1";
+            this.userTools1.Size = new System.Drawing.Size(631, 312);
+            this.userTools1.TabIndex = 0;
+            this.userTools1.Load += new System.EventHandler(this.userTools1_Load);
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(622, 345);
+            this.ClientSize = new System.Drawing.Size(643, 366);
             this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Main";
@@ -197,6 +197,7 @@
             this.menuStrip1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

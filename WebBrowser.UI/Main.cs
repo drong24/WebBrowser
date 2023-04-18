@@ -38,12 +38,11 @@ namespace WebBrowser.UI
         {
             string title = "TabPage " + (tabControl1.TabCount + 1).ToString();
             TabPage tabPage = new TabPage(title);
-            menuStrip1 = new MenuStrip();
-            tabPage.Controls.Add(menuStrip1);
-            tabPage.Controls[0].Dock = DockStyle.Top;
+           
+
             UserTools tool = new UserTools();
             tabPage.Controls.Add(tool);
-            tabPage.Controls[1].Dock = DockStyle.Fill;
+            tabPage.Controls[0].Dock = DockStyle.Fill;
             tabControl1.TabPages.Add(tabPage);
         }
 
