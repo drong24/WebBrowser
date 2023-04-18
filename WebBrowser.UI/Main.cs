@@ -12,7 +12,7 @@ namespace WebBrowser.UI
 {
     public partial class Main : Form
     {
-        public int BookmarkCount = 0;
+        
         public Main()
         {
             InitializeComponent();

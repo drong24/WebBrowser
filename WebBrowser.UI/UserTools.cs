@@ -20,8 +20,8 @@ namespace WebBrowser.UI
             InitializeComponent();
             
         }
-        
 
+        int BookmarkCount = 0;
 
         private void AddressTextBox_KeyDown_1(object sender, KeyEventArgs e)
         {
@@ -37,7 +37,7 @@ namespace WebBrowser.UI
 
             var VisitedItem = new HistoryItem();
             VisitedItem.url = address;
-            VisitedItem.title = "Histry";
+            VisitedItem.title = webBrowser1.Document.Title;
             VisitedItem.date = DateTime.Now;
             HistoryManager.AddItem(VisitedItem);
         }
@@ -72,8 +72,7 @@ namespace WebBrowser.UI
             }
             var bookmarkItem = new BookmarkItem();
             bookmarkItem.url = AddressTextBox.Text;
-            bookmarkItem.title = "Bookmark";
-
+            bookmarkItem.title = webBrowser1.Document.Title;
             BookmarksManager.AddItem(bookmarkItem);
         }
     }
