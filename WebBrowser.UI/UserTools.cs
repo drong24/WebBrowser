@@ -9,6 +9,7 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WebBrowser.Logic;
 
 namespace WebBrowser.UI
 {
@@ -34,34 +35,32 @@ namespace WebBrowser.UI
             string address = AddressTextBox.Text;
             webBrowser1.Navigate(address);
 
-            Main form = this.ParentForm as Main;
-            form.historyLen++;
-            form.history.Add(form.historyLen, address);
+            
         }
 
         private void backButton_Click(object sender, EventArgs e)
         {
             Main form = this.ParentForm as Main;
-            webBrowser1.Navigate(form.history[form.historyLen - 1]);
-            form.historyLen--;
+            webBrowser1.GoBack();
         }
 
         private void forwardButton_Click(object sender, EventArgs e)
         {
             Main form = this.ParentForm as Main;
-            webBrowser1.Navigate(form.history[form.historyLen + 1]);
-            form.historyLen++;
+            webBrowser1.GoForward();
         }
 
         private void RefreshButton_Click(object sender, EventArgs e)
         {
             Main form = this.ParentForm as Main;
-            webBrowser1.Navigate(form.history[form.historyLen]);
+            webBrowser1.Refresh();
         }
 
         private void BookmarkButton_ButtonClick(object sender, EventArgs e)
         {
-
+            var bookmarkItem = new BookmarkItem();
+            bookmarkItem.url = AddressTextBox.Text;
+           // bookmarkItem.title;
         }
     }
 }

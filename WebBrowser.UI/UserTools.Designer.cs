@@ -53,7 +53,7 @@
             this.BookmarkButton});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 0);
+            this.toolStrip1.Padding = new System.Windows.Forms.Padding(0);
             this.toolStrip1.Size = new System.Drawing.Size(523, 25);
             this.toolStrip1.Stretch = true;
             this.toolStrip1.TabIndex = 3;
@@ -96,6 +96,7 @@
             // 
             // AddressTextBox
             // 
+            this.AddressTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.AddressTextBox.Name = "AddressTextBox";
             this.AddressTextBox.Size = new System.Drawing.Size(152, 25);
             this.AddressTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.AddressTextBox_KeyDown_1);
@@ -114,15 +115,15 @@
             this.BookmarkButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.BookmarkButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.BookmarkButton.Name = "BookmarkButton";
-            this.BookmarkButton.Size = new System.Drawing.Size(82, 22);
-            this.BookmarkButton.Text = "Bookmarks";
+            this.BookmarkButton.Size = new System.Drawing.Size(77, 22);
+            this.BookmarkButton.Text = "Bookmark";
             this.BookmarkButton.ButtonClick += new System.EventHandler(this.BookmarkButton_ButtonClick);
             // 
             // webBrowser1
             // 
             this.webBrowser1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.webBrowser1.Location = new System.Drawing.Point(0, 25);
-            this.webBrowser1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.webBrowser1.Margin = new System.Windows.Forms.Padding(2);
             this.webBrowser1.MinimumSize = new System.Drawing.Size(10, 10);
             this.webBrowser1.Name = "webBrowser1";
             this.webBrowser1.Size = new System.Drawing.Size(523, 286);
@@ -134,7 +135,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.webBrowser1);
             this.Controls.Add(this.toolStrip1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UserTools";
             this.Size = new System.Drawing.Size(523, 311);
             this.toolStrip1.ResumeLayout(false);

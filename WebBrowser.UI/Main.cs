@@ -12,8 +12,7 @@ namespace WebBrowser.UI
 {
     public partial class Main : Form
     {
-        public Dictionary<int, string> history = new Dictionary<int, string>();
-        public int historyLen = 0;
+        public int BookmarkCount = 0;
         public Main()
         {
             InitializeComponent();
