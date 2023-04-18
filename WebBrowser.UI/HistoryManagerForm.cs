@@ -20,7 +20,13 @@ namespace WebBrowser.UI
 
         private void HistoryManagerForm_Load(object sender, EventArgs e)
         {
-           
+            var items = HistoryManager.GetItems();
+            listBox1.Items.Clear();
+
+            foreach (var item in items)
+            {
+                listBox1.Items.Add(string.Format("[{1}] {2} ({3})", item.date, item.title, item.url));
+            }
         }
     }
 }
