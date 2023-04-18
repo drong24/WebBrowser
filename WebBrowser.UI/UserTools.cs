@@ -35,7 +35,11 @@ namespace WebBrowser.UI
             string address = AddressTextBox.Text;
             webBrowser1.Navigate(address);
 
-            
+            var VisitedItem = new HistoryItem();
+            VisitedItem.url = address;
+            VisitedItem.title = "Histry";
+            VisitedItem.date = DateTime.Now;
+            HistoryManager.AddItem(VisitedItem);
         }
 
         private void backButton_Click(object sender, EventArgs e)
@@ -58,9 +62,19 @@ namespace WebBrowser.UI
 
         private void BookmarkButton_ButtonClick(object sender, EventArgs e)
         {
+            List<BookmarkItem> currBookmarks = BookmarksManager.GetItems();
+            foreach (var curr in currBookmarks)
+            {
+                if (curr.url == AddressTextBox.Text)
+                {
+                    return;
+                }
+            }
             var bookmarkItem = new BookmarkItem();
             bookmarkItem.url = AddressTextBox.Text;
-           // bookmarkItem.title;
+            bookmarkItem.title = "Bookmark";
+
+            BookmarksManager.AddItem(bookmarkItem);
         }
     }
 }
