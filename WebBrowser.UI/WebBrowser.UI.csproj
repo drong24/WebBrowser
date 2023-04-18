@@ -62,6 +62,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BookmarksManagerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BookmarksManagerForm.Designer.cs">
+      <DependentUpon>BookmarksManagerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HistoryManagerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HistoryManagerForm.Designer.cs">
+      <DependentUpon>HistoryManagerForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
