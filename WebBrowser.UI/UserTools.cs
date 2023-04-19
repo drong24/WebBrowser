@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WebBrowser.Logic;
+using System.Threading;
 
 namespace WebBrowser.UI
 {
@@ -72,6 +73,15 @@ namespace WebBrowser.UI
 
         private void webBrowser1_Navigated(object sender, WebBrowserNavigatedEventArgs e)
         {
+            var backgroundWorker = new BackgroundWorker();
+            backgroundWorker.DoWork += (s, ea) => Thread.Sleep(TimeSpan.FromSeconds(2));
+            backgroundWorker.RunWorkerCompleted += (s, ea) =>
+            {
+                ProgressLabel.Text = "";
+            };
+            ProgressLabel.Text = "Done";
+            backgroundWorker.RunWorkerAsync();
+
             var VisitedItem = new HistoryItem();
             VisitedItem.url = webBrowser1.Url.ToString();
             try
@@ -86,6 +96,25 @@ namespace WebBrowser.UI
             }
             VisitedItem.date = DateTime.Now;
             HistoryManager.AddItem(VisitedItem);
+        }
+
+        private void toolStripStatusLabel1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void webBrowser1_Navigating(object sender, WebBrowserNavigatingEventArgs e)
+        {
+            ProgressLabel.Text = "Loading";
+        }
+
+        private void webBrowser1_ProgressChanged(object sender, WebBrowserProgressChangedEventArgs e)
+        {
+            this.BrowserProgressBar.Maximum = (int) e.MaximumProgress;
+            if (e.CurrentProgress > 0)
+            {
+                this.BrowserProgressBar.Value = (int)e.CurrentProgress;
+            }
         }
     }
 }

@@ -37,7 +37,11 @@
             this.GoButton = new System.Windows.Forms.ToolStripButton();
             this.BookmarkButton = new System.Windows.Forms.ToolStripSplitButton();
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.BrowserProgressBar = new System.Windows.Forms.ToolStripProgressBar();
+            this.ProgressLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStrip1.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -96,7 +100,6 @@
             // 
             // AddressTextBox
             // 
-            this.AddressTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.AddressTextBox.Name = "AddressTextBox";
             this.AddressTextBox.Size = new System.Drawing.Size(152, 25);
             this.AddressTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.AddressTextBox_KeyDown_1);
@@ -129,11 +132,36 @@
             this.webBrowser1.Size = new System.Drawing.Size(523, 286);
             this.webBrowser1.TabIndex = 4;
             this.webBrowser1.Navigated += new System.Windows.Forms.WebBrowserNavigatedEventHandler(this.webBrowser1_Navigated);
+            this.webBrowser1.Navigating += new System.Windows.Forms.WebBrowserNavigatingEventHandler(this.webBrowser1_Navigating);
+            this.webBrowser1.ProgressChanged += new System.Windows.Forms.WebBrowserProgressChangedEventHandler(this.webBrowser1_ProgressChanged);
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.BrowserProgressBar,
+            this.ProgressLabel});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 289);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(523, 22);
+            this.statusStrip1.TabIndex = 5;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // BrowserProgressBar
+            // 
+            this.BrowserProgressBar.Name = "BrowserProgressBar";
+            this.BrowserProgressBar.Size = new System.Drawing.Size(120, 16);
+            // 
+            // ProgressLabel
+            // 
+            this.ProgressLabel.Name = "ProgressLabel";
+            this.ProgressLabel.Size = new System.Drawing.Size(0, 17);
+            this.ProgressLabel.Click += new System.EventHandler(this.toolStripStatusLabel1_Click);
             // 
             // UserTools
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.webBrowser1);
             this.Controls.Add(this.toolStrip1);
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -141,6 +169,8 @@
             this.Size = new System.Drawing.Size(523, 311);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -156,5 +186,8 @@
         public System.Windows.Forms.ToolStripButton GoButton;
         private System.Windows.Forms.ToolStripSplitButton BookmarkButton;
         private System.Windows.Forms.WebBrowser webBrowser1;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        public System.Windows.Forms.ToolStripProgressBar BrowserProgressBar;
+        private System.Windows.Forms.ToolStripStatusLabel ProgressLabel;
     }
 }
