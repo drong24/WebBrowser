@@ -40,6 +40,7 @@ namespace WebBrowser.Logic
                     output.Add(item);
                 }
                 return output;
+            
             }
             catch (Exception e)
             {

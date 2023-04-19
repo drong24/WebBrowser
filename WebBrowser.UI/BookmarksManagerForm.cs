@@ -29,7 +29,7 @@ namespace WebBrowser.UI
             }
         }
 
-        private void SearchButton_Click(object sender, EventArgs e)
+        private void SearchButton_Click_1(object sender, EventArgs e)
         {
             string searchItem = SearchBox.Text;
             var items = BookmarksManager.GetItems();
@@ -56,6 +56,10 @@ namespace WebBrowser.UI
             }
         }
 
-
+        private void DeleteButton_Click(object sender, EventArgs e)
+        {
+            listBox1.Items.Remove(listBox1.SelectedItem);
+            listBox1.Refresh();
+        }
     }
 }

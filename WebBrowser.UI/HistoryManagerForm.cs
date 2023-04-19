@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WebBrowser.Logic;
+using WebBrowser.Logic.WebBrowserDBDataSetTableAdapters;
 
 namespace WebBrowser.UI
 {
@@ -29,13 +30,14 @@ namespace WebBrowser.UI
             }
         }
 
-        private void HistorySearchButton_Click(object sender, EventArgs e)
+        private void SearchButton_Click(object sender, EventArgs e)
         {
-            string searchItem = HistorySearchText.Text;
+            string searchItem = SearchBox.Text;
             var items = HistoryManager.GetItems();
             listBox1.Items.Clear();
 
-            try {
+            try
+            {
                 foreach (var item in items)
                 {
                     if (item.title.Contains(searchItem) || item.url.Contains(searchItem))
@@ -47,12 +49,27 @@ namespace WebBrowser.UI
                 {
                     listBox1.Items.Add("No Results Found");
                 }
-                
+
             }
-            catch 
+            catch
             {
                 listBox1.Items.Add("No Results Found");
             }
+        }
+
+        private void DeleteButton_Click(object sender, EventArgs e)
+        {
+            var items = HistoryManager.GetItems();
+            var item = items[listBox1.SelectedIndex];
+            var adapter = new HistoryTableAdapter();
+            adapter.Delete(listBox1.SelectedIndex, item.url, item.title, item.date.ToString());
+            listBox1.Items.Remove(listBox1.SelectedItem);
+            listBox1.Refresh();
+        }
+
+        private void ClearHistoryButton_Click(object sender, EventArgs e)
+        {
+            listBox1.Items.Clear();
         }
     }
 }
