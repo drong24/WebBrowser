@@ -21,17 +21,16 @@ namespace WebBrowser.UI
 
         private void HistoryManagerForm_Load(object sender, EventArgs e)
         {
-            var items = HistoryManager.GetItems();
-            listBox1.Items.Clear();
-
-            foreach (var item in items)
+            // TODO: This line of code loads data into the 'webBrowserDBDataSet.History' table. You can move, or remove it, as needed.
+            this.historyTableAdapter.Fill(this.webBrowserDBDataSet.History);
+            foreach (var item in this.webBrowserDBDataSet.History)
             {
-                listBox1.Items.Add(string.Format("[{0}] {1} ({2})", item.date, item.title, item.url));
+                listBox1.Items.Add(item);
             }
         }
 
         private void SearchButton_Click(object sender, EventArgs e)
-        {
+        { 
             string searchItem = SearchBox.Text;
             var items = HistoryManager.GetItems();
             listBox1.Items.Clear();
@@ -40,10 +39,8 @@ namespace WebBrowser.UI
             {
                 foreach (var item in items)
                 {
-                    if (item.title.Contains(searchItem) || item.url.Contains(searchItem))
-                    {
-                        listBox1.Items.Add(string.Format("[{0}] {1} ({2})", item.date, item.title, item.url));
-                    }
+                    
+                                  
                 }
                 if (listBox1.Items.Count < 1)
                 {
@@ -59,10 +56,7 @@ namespace WebBrowser.UI
 
         private void DeleteButton_Click(object sender, EventArgs e)
         {
-            var items = HistoryManager.GetItems();
-            var item = items[listBox1.SelectedIndex];
-            var adapter = new HistoryTableAdapter();
-            adapter.Delete(listBox1.SelectedIndex, item.url, item.title, item.date.ToString());
+            this.historyBindingSource.RemoveCurrent();
             listBox1.Items.Remove(listBox1.SelectedItem);
             listBox1.Refresh();
         }

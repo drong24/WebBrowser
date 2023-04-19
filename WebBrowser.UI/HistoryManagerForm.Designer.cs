@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HistoryManagerForm));
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
@@ -35,13 +36,20 @@
             this.SearchButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.DeleteButton = new System.Windows.Forms.ToolStripButton();
-            this.ClearHistoryButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.ClearHistoryButton = new System.Windows.Forms.ToolStripButton();
+            this.webBrowserDBDataSet = new WebBrowser.UI.WebBrowserDBDataSet();
+            this.historyBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.historyTableAdapter = new WebBrowser.UI.WebBrowserDBDataSetTableAdapters.HistoryTableAdapter();
             this.toolStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.webBrowserDBDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.historyBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // listBox1
             // 
+            this.listBox1.DataSource = this.historyBindingSource;
+            this.listBox1.DisplayMember = "Title";
             this.listBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listBox1.FormattingEnabled = true;
             this.listBox1.Location = new System.Drawing.Point(0, 25);
@@ -66,7 +74,6 @@
             // 
             // SearchBox
             // 
-            this.SearchBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.SearchBox.Name = "SearchBox";
             this.SearchBox.Size = new System.Drawing.Size(100, 25);
             // 
@@ -95,6 +102,11 @@
             this.DeleteButton.Text = "Delete";
             this.DeleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
             // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
+            // 
             // ClearHistoryButton
             // 
             this.ClearHistoryButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
@@ -105,10 +117,19 @@
             this.ClearHistoryButton.Text = "Clear History";
             this.ClearHistoryButton.Click += new System.EventHandler(this.ClearHistoryButton_Click);
             // 
-            // toolStripSeparator2
+            // webBrowserDBDataSet
             // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
+            this.webBrowserDBDataSet.DataSetName = "WebBrowserDBDataSet";
+            this.webBrowserDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // historyBindingSource
+            // 
+            this.historyBindingSource.DataMember = "History";
+            this.historyBindingSource.DataSource = this.webBrowserDBDataSet;
+            // 
+            // historyTableAdapter
+            // 
+            this.historyTableAdapter.ClearBeforeFill = true;
             // 
             // HistoryManagerForm
             // 
@@ -122,6 +143,8 @@
             this.Load += new System.EventHandler(this.HistoryManagerForm_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.webBrowserDBDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.historyBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -137,5 +160,8 @@
         private System.Windows.Forms.ToolStripButton DeleteButton;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripButton ClearHistoryButton;
+        private WebBrowserDBDataSet webBrowserDBDataSet;
+        private System.Windows.Forms.BindingSource historyBindingSource;
+        private WebBrowserDBDataSetTableAdapters.HistoryTableAdapter historyTableAdapter;
     }
 }

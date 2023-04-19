@@ -25,7 +25,7 @@ namespace WebBrowser.Logic
 
         public static List<HistoryItem> GetItems()
         {
-            try {
+           // try {
                 var adapter = new HistoryTableAdapter();
                 var output = new List<HistoryItem>();
                 var rows = adapter.GetData();
@@ -41,12 +41,12 @@ namespace WebBrowser.Logic
                 }
                 return output;
             
-            }
+           /* }
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
                 return null;
-            }
+            }*/
             }
         
     }
