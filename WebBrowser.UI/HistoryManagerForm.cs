@@ -28,5 +28,31 @@ namespace WebBrowser.UI
                 listBox1.Items.Add(string.Format("[{0}] {1} ({2})", item.date, item.title, item.url));
             }
         }
+
+        private void HistorySearchButton_Click(object sender, EventArgs e)
+        {
+            string searchItem = HistorySearchText.Text;
+            var items = HistoryManager.GetItems();
+            listBox1.Items.Clear();
+
+            try {
+                foreach (var item in items)
+                {
+                    if (item.title.Contains(searchItem) || item.url.Contains(searchItem))
+                    {
+                        listBox1.Items.Add(string.Format("[{0}] {1} ({2})", item.date, item.title, item.url));
+                    }
+                }
+                if (listBox1.Items.Count < 1)
+                {
+                    listBox1.Items.Add("No Results Found");
+                }
+                
+            }
+            catch 
+            {
+                listBox1.Items.Add("No Results Found");
+            }
+        }
     }
 }
