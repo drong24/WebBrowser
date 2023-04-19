@@ -16,6 +16,36 @@ namespace WebBrowser.Logic
 
         }
 
+        public static void DeleteItem(BookmarkItem item)
+        {
+            try
+            {
+                var adapter = new BookmarksTableAdapter();
+                adapter.Delete(item.id, item.url, item.title);
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
+        }
+
+        public static BookmarkItem getSingleItem(int id)
+        {
+            BookmarkItem output = new BookmarkItem();
+            List < BookmarkItem > items = BookmarksManager.GetItems();
+            foreach (var item in items)
+            {
+                if (item.id == id)
+                {
+                    output.id = item.id;
+                    output.url = item.url;
+                    output.title = item.title;
+                    break;
+                }
+            }
+            return output;
+        }
         public static List<BookmarkItem> GetItems()
         {
             try
@@ -29,6 +59,7 @@ namespace WebBrowser.Logic
                     var item = new BookmarkItem();
                     item.url = row.URL;
                     item.title = row.Title;
+                    item.id = row.Id;
                     output.Add(item);
                 }
                 return output;

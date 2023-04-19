@@ -40,7 +40,7 @@ namespace WebBrowser.UI
                 {
                     if (item.title.Contains(searchItem) || item.url.Contains(searchItem))
                     {
-                        listBox1.Items.Add(string.Format("[{0}] {1} ({2})", item.date, item.title, item.url));
+                        listBox1.Items.Add(string.Format("{0}:{1}:{2}:{3}", item.id, item.date, item.title, item.url));
                     }
                 }
                 if (listBox1.Items.Count < 1)

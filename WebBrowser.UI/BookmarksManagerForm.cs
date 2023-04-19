@@ -25,7 +25,7 @@ namespace WebBrowser.UI
 
             foreach (var item in items)
             {
-                listBox1.Items.Add(string.Format("{0} ({1})", item.title, item.url));
+                listBox1.Items.Add(string.Format("{0}:{1}:{2}", item.id, item.title, item.url));
             }
         }
 
@@ -41,7 +41,7 @@ namespace WebBrowser.UI
                 {
                     if (item.title.Contains(searchItem) || item.url.Contains(searchItem))
                     {
-                        listBox1.Items.Add(string.Format("{0} ({1})", item.title, item.url));
+                        listBox1.Items.Add(string.Format("{0}:{1}:{2}", item.id, item.title, item.url));
                     }
                 }
                 if (listBox1.Items.Count < 1)
@@ -58,8 +58,23 @@ namespace WebBrowser.UI
 
         private void DeleteButton_Click(object sender, EventArgs e)
         {
-            listBox1.Items.Remove(listBox1.SelectedItem);
-            listBox1.Refresh();
+            try
+            {
+                string item_info = listBox1.SelectedItem.ToString();
+                string[] attributes = item_info.Split(':');
+                //MessageBox.Show(listBox1.SelectedItem.ToString());
+                //listBox1.Items.Remove(listBox1.SelectedItem);
+                //MessageBox.Show(attributes[1]);
+
+                int id = Convert.ToInt32(attributes[0]);
+                BookmarkItem item = BookmarksManager.getSingleItem(id);
+                BookmarksManager.DeleteItem(item);
+                BookmarksManagerForm_Load(sender, e);
+            }
+            catch (NullReferenceException ex)
+            {
+                MessageBox.Show("Please choose an item to delete");
+            }
         }
     }
 }
